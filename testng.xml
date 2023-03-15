@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite" parallel="tests" thread-count="2">
+	<listeners>
+		<listener class-name="com.usps.Listener.Listeners"></listener>
+	</listeners>
+	<parameter name="URL" value="http://usps.com"></parameter>
+	
+	<test name="ChromeTest">
+	<parameter name="browser" value="Chrome"></parameter>
+	   <!-- <groups>
+		  <run>
+			  <exclude name= "Smoke"></exclude>  
+		  </run>
+	  </groups> -->
+    <classes>
+      <class name="com.usps.web.testCases.HomePageTest"/>
+      <class name="com.usps.web.testCases.LoginPageTest"/>
+      <class name="com.usps.web.testCases.TrackPackagePageTest"/>
+    </classes>
+  </test> <!-- Test -->
+  
+  <test name="FireFoxTest">
+	<parameter name="browser" value="Firefox"></parameter>
+	   <!-- <groups>
+		  <run>
+			  <exclude name= "Smoke"></exclude>  
+		  </run>
+	  </groups> -->
+    <classes>
+      <class name="com.usps.web.testCases.HomePageTest"/>
+      <class name="com.usps.web.testCases.LoginPageTest"/>
+      <class name="com.usps.web.testCases.TrackPackagePageTest"/>
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->
